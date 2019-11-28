@@ -2,3 +2,22 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+#display {
+  display: grid;
+  margin: auto;
+  /* border: 1px solid #faa8a4; */
+  background-color: lightskyblue;
+  padding: 4px;
+  max-width: 600px;
+  max-height: 600px;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  grid-template-rows: 33.3% 33.3% 33.3%;
+}
+
+.drumpad {
+  max-width: 100%;
+  margin: 3px 2px 0 3px;
+  background: #fff;
+  cursor: pointer;
+}
