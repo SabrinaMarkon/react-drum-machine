@@ -1,18 +1,21 @@
 import React from "react";
 
 export default function OneDrum(props) {
-  const handleClick = letter => console.log(letter);
-  const handleKey = letter => console.log(letter);
+  const playAudio = letter => {
+    const sound = document
+      .getElementById(letter)
+      .getElementsByClassName("clip")[0];
+    sound.play();
+  };
   return (
     <div
       data-key={props.keyCode}
       className="drum-pad"
       id={props.keyCode}
-      onClick={event => handleClick(props.keyCode)}
-      onKeyDown={event => handleKey(props.keyCode)}
+      onClick={event => playAudio(props.keyCode)}
     >
       <kbd>{props.keyCode}</kbd>
-      <audio className="clip" data-key={props.keyCode} src={props.mp3Url} />
+      <audio className="clip" src={props.mp3Url} />
     </div>
   );
 }
