@@ -14,7 +14,7 @@ export default function Drums() {
   return (
     <div id="drum-machine">
       <div id="display" />
-      {drumPads}
+      <div className="drum-pads">{drumPads}</div>
     </div>
   );
 }
