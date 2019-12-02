@@ -6,6 +6,7 @@ export default function OneDrum(props) {
       .getElementById(letter)
       .getElementsByClassName("clip")[0];
     sound.play();
+    document.getElementById("display").innerText = props.describeSound;
   };
   return (
     <div

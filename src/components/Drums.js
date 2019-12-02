@@ -4,11 +4,17 @@ import { allDrums } from "../constants";
 
 export default function Drums() {
   const drumPads = allDrums.map(drum => (
-    <OneDrum key={drum.keyCode} keyCode={drum.keyCode} mp3Url={drum.mp3Url} />
+    <OneDrum
+      key={drum.keyCode}
+      keyCode={drum.keyCode}
+      describeSound={drum.describeSound}
+      mp3Url={drum.mp3Url}
+    />
   ));
   return (
     <div id="drum-machine">
-      <div id="display">{drumPads}</div>
+      <div id="display" />
+      {drumPads}
     </div>
   );
 }
