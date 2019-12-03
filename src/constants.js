@@ -31,7 +31,7 @@ const allDrums = [
   },
   {
     keyCode: "D",
-    describeSound: "Chirrup",
+    describeSound: "Chirpy",
     mp3Url:
       "https://sabrinamarkon-images.s3-us-west-2.amazonaws.com/react-drum-machine/Give_us_a_light.mp3"
   },

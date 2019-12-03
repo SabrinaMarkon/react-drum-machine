@@ -13,7 +13,7 @@ export default function Drums() {
   ));
   return (
     <div id="drum-machine">
-      <div id="display" />
+      <div id="display">Sabrina's Gnarly DruMz</div>
       <div className="drum-pads">{drumPads}</div>
     </div>
   );

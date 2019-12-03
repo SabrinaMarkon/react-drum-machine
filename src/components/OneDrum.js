@@ -15,7 +15,7 @@ export default function OneDrum(props) {
       id={props.keyCode}
       onClick={event => playAudio(props.keyCode)}
     >
-      <kbd>{props.keyCode}</kbd>
+      <kbd className="drum-key">{props.keyCode}</kbd>
       <audio className="clip" src={props.mp3Url} />
     </div>
   );

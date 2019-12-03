@@ -1,50 +1,66 @@
-.App {
-  font-family: sans-serif;
+body {
+  background: #000;
   text-align: center;
 }
 
-#display {
-  height: 2em;
-  padding: 1em;
-  margin: auto;
+#drum-machine {
+  min-width: 220px;
+  max-width: 600px;
   background-color: #7d7d7e;
   color: #fbff00;
-  font: 22pt bold;
-  max-width: 600px;
-  border: 3px solid rgb(0, 0, 0);
+  border: 3px solid rgb(78, 75, 75);
   border-bottom: 0;
-  box-shadow: 0 0 5px #000;
-  text-shadow: -1px -1px 0 #000;
+  border-right: 0;
+  padding: 0.8rem;
+  margin: auto;
+  font: bold 2rem "Roboto", sans-serif;
+  text-shadow: -2px -2px 1px #000;
+}
+
+#display {
+  margin-bottom: 1rem;
+  min-height: 1rem;
+}
+
+#display:hover {
+  color: #3cff00;
 }
 
 .drum-pads {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-gap: 0.6em;
-  padding: 0.5em;
-  margin: auto;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(30%, 1fr));
+  grid-gap: 0.6rem;
   background-color: #5d5d5f;
-  color: #fbff00;
-  font: 2em bold;
-  max-width: 600px;
   border: 3px solid #000;
   box-shadow: -2px 2px 4px 4px rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  margin: auto;
+  text-align: center;
+}
+
+.drum-pads .drum-pad::before {
+  content: "";
+  padding-bottom: 100%;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .drum-pad {
+  cursor: pointer;
   background: #303135;
   border: 2px solid #3cff00;
-  cursor: pointer;
-  padding: 1em;
   box-shadow: -8px 6px 6px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 .drum-pad:hover {
-  background: #303135;
+  color: #fbff00;
   border: 2px solid #ff006a;
-  color: #fff;
-  cursor: pointer;
-  padding: 1em;
   box-shadow: -3px -2px 2px #000, 3px -6px 5px rgba(255, 255, 255, 0.3);
+}
+
+.drum-pad:active {
+  color: #fff;
+  border: 2px solid #0099ff;
 }
