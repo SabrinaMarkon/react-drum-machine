@@ -7,9 +7,13 @@ export default function OneDrum(props) {
     document.getElementById("display").innerText = props.describeSound;
   };
   return (
-    <div className="drum-pad" onClick={event => playAudio(props.keyCode)}>
+    <div
+      className="drum-pad"
+      id={props.describeSound}
+      onClick={event => playAudio(props.keyCode)}
+    >
       <kbd>{props.keyCode}</kbd>
-      <audio className="clip" src={props.mp3Url} id={props.keyCode} />
+      <audio className="clip" id={props.keyCode} src={props.mp3Url} />
     </div>
   );
 }
