@@ -5,6 +5,8 @@ import { allDrums } from "../constants";
 export default function Drums() {
   const hitDrum = e => {
     const drumObj = allDrums.filter(obj => obj.keyCode === e.key.toUpperCase());
+    const drumDiv = drumObj[0]["describeSound"];
+    console.log(drumDiv);
     if (drumObj) {
       const drumSound = document.getElementById(e.key.toUpperCase());
       drumSound.play();

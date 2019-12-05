@@ -9,7 +9,7 @@ export default function OneDrum(props) {
   return (
     <div
       className="drum-pad"
-      id={props.describeSound}
+      id={props.describeSound.replace(/ /g, "")}
       onClick={event => playAudio(props.keyCode)}
     >
       <kbd>{props.keyCode}</kbd>
