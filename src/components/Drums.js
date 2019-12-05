@@ -5,17 +5,25 @@ import { allDrums } from "../constants";
 export default function Drums() {
   const hitDrum = e => {
     const drumObj = allDrums.filter(obj => obj.keyCode === e.key.toUpperCase());
-    const drumDiv = drumObj[0]["describeSound"];
-    console.log(drumDiv);
+    const drumDiv = drumObj[0]["describeSound"].replace(/ /g, "");
     if (drumObj) {
-      const drumSound = document.getElementById(e.key.toUpperCase());
-      drumSound.play();
+      if (e.type === "keydown") {
+        document.getElementById(drumDiv).classList.add("pressed-key");
+        const drumSound = document.getElementById(e.key.toUpperCase());
+        drumSound.play();
+      } else {
+        document.getElementById(drumDiv).classList.remove("pressed-key");
+      }
     }
   };
 
   useEffect(() => {
     window.addEventListener("keydown", hitDrum);
-    return () => window.removeEventListener("keydown", hitDrum);
+    window.addEventListener("keyup", hitDrum);
+    return () => {
+      window.removeEventListener("keydown", hitDrum);
+      window.removeEventListener("keyup", hitDrum);
+    };
   }, []);
 
   const drumPads = allDrums.map(drum => (
