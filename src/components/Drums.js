@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import OneDrum from "./OneDrum";
 import { allDrums } from "../constants";
 
 export default function Drums() {
+  const hitDrum = e => {
+    console.log(e.key);
+  };
+
+  useEffect(() => {
+    window.addEventListener("keydown", hitDrum);
+    return () => window.removeEventListener("keydown", hitDrum);
+  }, []);
+
   const drumPads = allDrums.map(drum => (
     <OneDrum
       key={drum.keyCode}
