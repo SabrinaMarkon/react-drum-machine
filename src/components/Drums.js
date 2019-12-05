@@ -6,14 +6,27 @@ import { allDrums } from "../constants";
 export default function Drums() {
   const hitDrum = e => {
     const drumObj = allDrums.filter(obj => obj.keyCode === e.key.toUpperCase());
-    const drumDiv = drumObj[0]["describeSound"].replace(/ /g, "");
-    if (drumObj) {
+    if (drumObj.length !== 0) {
+      const drumDiv = drumObj[0]["describeSound"].replace(/ /g, "");
       if (e.type === "keydown") {
-        document.getElementById(drumDiv).classList.add("pressed-key");
+        document.getElementById(drumDiv).classList.add("pressed-key"); // change style.
         const drumSound = document.getElementById(e.key.toUpperCase());
-        drumSound.play();
+        const playPromise = drumSound.play();
+        if (playPromise) {
+          playPromise
+            .then(() => {
+              // Audio Loading Successful
+              // Audio playback takes time
+              setTimeout(() => {
+                // console.log("done.");
+              }, drumSound.duration * 1000); // duration is the length of the sound.
+            })
+            .catch(e => {
+              console.log("Failed to load audio.");
+            });
+        }
       } else {
-        document.getElementById(drumDiv).classList.remove("pressed-key");
+        document.getElementById(drumDiv).classList.remove("pressed-key"); // change style back.
       }
     }
   };
