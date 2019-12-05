@@ -65,3 +65,23 @@ body {
   color: #fff;
   border: 2px solid #0099ff;
 }
+
+.madewithlove {
+  margin-top: 1rem;
+  font: normal 1.2rem "Roboto", sans-serif;
+  color: #fbff00;
+}
+
+.madewithlove a {
+  color: #fbff00;
+  text-decoration: none;
+}
+
+.madewithlove a:hover {
+  color: #3cff00;
+  text-decoration: underline;
+}
+
+.madewithlove__heart:hover {
+  color: #ff006a;
+}

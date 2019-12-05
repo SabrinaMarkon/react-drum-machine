@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Drums from "./components/Drums";
-
 import "./styles.css";
 
 function App() {

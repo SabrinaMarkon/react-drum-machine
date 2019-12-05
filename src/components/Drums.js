@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import OneDrum from "./OneDrum";
+import Footer from "./Footer";
 import { allDrums } from "../constants";
 
 export default function Drums() {
@@ -38,6 +39,7 @@ export default function Drums() {
     <div id="drum-machine">
       <div id="display">Sabrina's Gnarly DruMz</div>
       <div className="drum-pads">{drumPads}</div>
+      <Footer />
     </div>
   );
 }
