@@ -28,8 +28,10 @@ body {
 
 .drum-pads {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(30%, 1fr));
+  /* grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(30%, 1fr)); */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-gap: 0.6rem;
   background-color: #5d5d5f;
   border: 3px solid #000;
