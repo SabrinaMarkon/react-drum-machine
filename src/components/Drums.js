@@ -4,7 +4,14 @@ import { allDrums } from "../constants";
 
 export default function Drums() {
   const hitDrum = e => {
-    console.log(e.key);
+    // console.log(e.key);
+    const drumSound = allDrums.filter(
+      obj => obj.keyCode === e.key.toUpperCase()
+    );
+    if (drumSound) {
+      console.log(document.getElementById(e.key.toUpperCase()));
+      // document.getElementById(e.key.toUpperCase()).play();
+    }
   };
 
   useEffect(() => {
